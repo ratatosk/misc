@@ -28,19 +28,13 @@ def add_code(x):
 # run through alphabet adding letters
 map(add_code, alphabet)
 
-print word
-
 # make list of encoded coordinates:
 #                 take x coordinates                   take y coordinates    
 coords = map(lambda c: forward[c][0], word) + map(lambda c: forward[c][1], word)
 
-print coords
-
 # group coordinates to pairs:
 coord_pairs = zip([coords[x*2] for x in range (0, len(word))],
                   [coords[x*2 + 1] for x in range (0, len(word))])
-
-print coord_pairs
 
 # convert coordinate pairs back to letters:
 encoded = map(lambda c: backward[c], coord_pairs)
